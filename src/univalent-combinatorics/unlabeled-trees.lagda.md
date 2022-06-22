@@ -30,9 +30,11 @@ open import univalent-combinatorics.finite-types
 
 ## Idea
 
-An unlabelled tree is an undirected acyclic graph `G`.
+An unlabeled tree is an undirected acyclic graph `G`.
 
 ## Definition
+
+The type species of unlabeled trees is the sigma of connected trees over the type of finite types.
 
 ```agda
 is-acyclic : {l1 l2 : Level} → Undirected-Graph l1 l2
@@ -40,8 +42,8 @@ is-acyclic : {l1 l2 : Level} → Undirected-Graph l1 l2
 is-acyclic G = (k : ℕ) → is-empty
                         (cycle-Undirected-Graph k G)
 
-trees : {l : Level} → species (lsuc l)
-trees {l} X = Σ
+unlabeled-trees : {l : Level} → species (lsuc l)
+unlabeled-trees {l} X = Σ
             (unordered-pair (type-𝔽 X) → UU l)
             (λ E →
                 ((is-connected-Undirected-Graph (pair (type-𝔽 X) E))
