@@ -7,7 +7,7 @@ title: Unlabelled trees
 
 module univalent-combinatorics.unlabeled-trees where
 
-open import foundation-core.dependent-pair-types
+open import foundation.dependent-pair-types
 
 open import foundation.empty-types using (is-empty)
 open import foundation.universe-levels
