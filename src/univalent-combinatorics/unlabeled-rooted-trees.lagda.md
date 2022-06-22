@@ -1,5 +1,5 @@
 ---
-title: Unlabelled rooted trees
+title: Unlabeled rooted trees
 ---
 
 ```agda
@@ -31,7 +31,9 @@ finite type.
 
 
 ```agda
-unlabeled-rooted-trees : {l : Level} → species (lsuc l)
-unlabeled-rooted-trees {l} X = (unlabeled-trees X) × (type-𝔽 X)
+rooted-tree : {l : Level} → species (lsuc l)
+rooted-tree {l} X = (tree X) × (type-𝔽 X)
 
+unlabeled-rooted-tree : {l : Level} → UU (lsuc l) 
+unlabeled-rooted-tree {l} = Σ (𝔽) (λ X → rooted-tree {l} X)
 ```
