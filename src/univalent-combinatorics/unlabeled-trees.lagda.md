@@ -51,17 +51,8 @@ tree {l} X =  {E : unordered-pair (type-𝔽 X) → UU l} →
 unlabeled-trees : {l : Level} → species (lsuc l)
 unlabeled-trees {l} X = Σ
             (unordered-pair (type-𝔽 X) → UU l)
+            
             (λ E → tree {l} X)  
-
-
-
--- unlabeled-trees : {l : Level} → species (lsuc l)
--- unlabeled-trees {l} X = Σ
---            (unordered-pair (type-𝔽 X) → UU l)
---            (λ E →
---                ((is-connected-Undirected-Graph (pair (type-𝔽 X) E))
---                    ×
---                (is-acyclic (pair (type-𝔽 X) E)))
---                )          
+     
 ```     
    
